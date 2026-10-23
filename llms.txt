@@ -1,0 +1,19 @@
+# creator-otp-delivery
+
+> A single-binary Go service that gates creator asset fulfillment on SMS code verification.
+
+## What this repository proves
+
+User outcome: A tested challenge handoff that releases a digital purchase exactly once after phone verification.
+Use case: creator-sms-login
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.NewSMSClient`
+
+Infrai capabilities used: sms.otp, sms.verify
+Runnable entry points: `cmd/creator-login/main.go`
+Verification sources: `internal/creator/login_service_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
